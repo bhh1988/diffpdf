@@ -33,7 +33,7 @@ typedef std::tr1::shared_ptr<Poppler::TextBox> PdfTextBox;
 #endif
 typedef QList<PdfTextBox> TextBoxList;
 
-enum InitialComparisonMode{CompareAppearance=0, CompareCharacters=1,
+enum InitialComparisonMode{CompareVisual=0, CompareCharacters=1,
                            CompareWords=2};
 
 enum Debug{DebugOff, DebugShowTexts, DebugShowTextsAndYX};

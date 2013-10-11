@@ -1,0 +1,11 @@
+Aside from the TODOs sprinkled in the code, need to
+1. Rename the files more appropriately and throw out files I don't need anymore. Also fix the Makefile. The aboutform.cpp, helpform.cpp, label.cpp, lineedit.cpp, optionsform.cpp, and their corresponding .hpp files should no longer be used. saveform.cpp is only used for its SavePages enum, which we should probably pull out. 
+2. Investigate whether we can do better than just rasterization.
+3. Investigate false positives and granularity. Sometimes CompareChar is better than CompareWords, sometimes it's the other way around, and we will also sometimes see words being marked as different when they really aren't.
+4. It looks like best case scenario, punctuation mark differences (period vs comma) marks the whole word as different. Investigate.
+5. For some reason, I believe the output argument --output=<path> is only working with absolute path names.
+
+Sample commands:
+./diffpdf --visual --output=/Users/bhuh/Desktop/diffpdf_test_pdfs/bryan.pdf ~/Desktop/diffpdf_test_pdfs/Platform\ Pitch1.pdf ~/Desktop/diffpdf_test_pdfs/Platform\ Pitch2.pdf --zoom=1 --pagesDoc1=1-13,15-18 --pagesDoc2=1-17
+
+./diffpdf --words -s ~/Desktop/diffpdf_test_pdfs/Pheasants1.pdf ~/Desktop/diffpdf_test_pdfs/Pheasants2.pdf --combineHighlight --brushColor=blue
